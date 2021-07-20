@@ -1,4 +1,13 @@
 import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Display from '../Display';
+import userEvent from '@testing-library/user-event';
+
+test('renders the summury test passed as prop', () => {
+	render(<Display />);
+	const button = screen.queryByText(/Press to Get Show Data/i);
+	expect(button).toBeInTheDocument();
+});
 
 ///Tasks:
 //1. Add in nessisary imports and values to establish the testing suite.
